@@ -32,11 +32,11 @@ jobs:
       - name: Build and Deploy to GitHub Pages
         env:
           REPO: https://github.com/AukashaKhan/my-app.git
-          TOKEN: ${{ secrets.deploy }}  # Personal access token from GitHub secrets
+          TOKEN: ${{ secrets.DEPLOY }}  # Personal access token from GitHub secrets
         run: |
           npm run build
           # Set git credentials
           git config --global user.name "Aukasha"
           git config --global user.email "aukashakhan30@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.deploy }}@github.com/AukashaKhan/my-app.git
-          npx gh-pages -d build -r "https://x-access-token:${{ secrets.deploy }}@github.com/AukashaKhan/my-app.git"
+          git remote set-url origin https://x-access-token:${{ secrets.DEPLOY }}@github.com/AukashaKhan/my-app.git
+          npx gh-pages -d build -r "https://x-access-token:${{ secrets.DEPLOY }}@github.com/AukashaKhan/my-app.git"
