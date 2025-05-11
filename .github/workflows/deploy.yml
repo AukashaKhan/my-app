@@ -26,8 +26,8 @@ jobs:
 
       - name: Set Git identity
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "Aukasha"
+          git config user.email "aukashakhan30@gmail.com"
 
       - name: Deploy to GitHub Pages
         run: |
