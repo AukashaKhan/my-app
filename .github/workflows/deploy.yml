@@ -24,19 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set Git identity
-        run: |
-          git config user.name "Aukasha"
-          git config user.email "aukashakhan30@gmail.com"
+      - name: Build React app
+        run: npm run build
 
-      - name: Build and Deploy to GitHub Pages
-        env:
-          REPO: https://github.com/AukashaKhan/my-app.git
-          TOKEN: ${{ secrets.DEPLOY }}  # Personal access token from GitHub secrets
-        run: |
-          npm run build
-          # Set git credentials
-          git config --global user.name "Aukasha"
-          git config --global user.email "aukashakhan30@gmail.com"
-          git remote set-url origin https://x-access-token:${{ secrets.DEPLOY }}@github.com/AukashaKhan/my-app.git
-          npx gh-pages -d build -r "https://x-access-token:${{ secrets.DEPLOY }}@github.com/AukashaKhan/my-app.git"
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY }}
+          publish_dir: ./build
