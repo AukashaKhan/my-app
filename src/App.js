@@ -299,7 +299,7 @@ const [isAdding, setIsAdding] = useState(false);
   return (
     <div style={styles.container}>
       <nav style={styles.sidebar}>
-        <h2 style={styles.sidebarTitle}>My React App</h2>
+        <h2 style={styles.sidebarTitle}>Hamza bhai </h2>
         <ul style={styles.navList}>
           {["users", "posts", "todos"].map((p) => (
             <li
